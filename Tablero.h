@@ -54,6 +54,9 @@ void Tablero::imprimir(){
 			else if(this->tablero[i][j] == 2){
 				cout<<"G";
 			}
+			else if(this->tablero[i][j] == 4){
+				cout<<"Z";
+			}
 		}
 		cout<<"|";
 		cout<<endl;

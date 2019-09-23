@@ -1,3 +1,5 @@
+#ifndef GALLINA_H
+#define GALLINA_H
 #include "Personaje.h"
 
 class Gallina : public Personaje{
@@ -11,3 +13,4 @@ class Gallina : public Personaje{
 Gallina::Gallina(int X, int Y):Personaje(X, Y){
 	
 }
+#endif
