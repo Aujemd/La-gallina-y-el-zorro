@@ -51,7 +51,7 @@ void Juego::GenerarPosG(){
 		
 		if(tab.tablero[randX][randY] == 0){
 			
-			g = new Gallina(randX, randY); 
+			g = new Gallina(Punto(randX, randY)); 
 			tab.tablero[randX][randY] = g->valor;
 			bandera = 1;
 		}
@@ -66,15 +66,15 @@ void Juego::generarPosZ(){
 	while(!isIn){
 		const int randX  = rand()%5;
 		const int randY = rand()%5;
-		const int gallX = g->X;
-		const int gallY = g->Y;
+		const int gallX = g->point.getX();
+		const int gallY = g->point.getY();
 		const bool isEmptyPos = (tab.tablero[randX][randY] == 0);
 		const bool isNotNextX = ( randX != (gallX-1) && randX != (gallX+1) );
 		const bool isNotNextY = ( randY != (gallY-1) && randY != (gallY+1) );
 		
 		if(isEmptyPos && isNotNextX && isNotNextY) {
 			isIn = true;
-			z = new Zorro(randX, randY);
+			z = new Zorro(Punto(randX, randY));
 			tab.tablero[randX][randY] = z->valor;
 		}
 	}
