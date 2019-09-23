@@ -20,41 +20,47 @@ Personaje::Personaje(int X, int Y):Movimiento(){
 	this->X = X;
 	this->Y = Y;
 	this->point = Punto(X, Y);
+	this->setMovPoint(this->point);
 }
 
 Personaje::Personaje(Punto p):Movimiento(){
 	this->X = p.getX();
 	this->Y = p.getY();
 	this->point = Punto(X, Y);
+	this->setMovPoint(this->point);
 }
 
-bool Personaje::MoverArriba(){
+bool Personaje::MoverIzquierda(){
 	if(this->X > 0){
 		this->X -= 1;
-		return true;
-	}
-	return false;
-}
-
-bool Personaje::MoverAbajo(){
-	if(this->X < 4){
-		this->X += 1;	
+		this->point.setX(this->X);
 		return true;
 	}
 	return false;
 }
 
 bool Personaje::MoverDerecha(){
-	if(this->Y < 4){
-		this->Y += 1;	
+	if(this->X < 4){
+		this->X += 1;
+		this->point.setX(this->X);
 		return true;
 	}
 	return false;
 }
 
-bool Personaje::MoverIzquierda(){
+bool Personaje::MoverAbajo(){
+	if(this->Y < 4){
+		this->Y += 1;
+		this->point.setY(this->Y);
+		return true;
+	}
+	return false;
+}
+
+bool Personaje::MoverArriba(){
 	if(this->Y > 0){
 		this->Y -= 1;
+		this->point.setY(this->Y);
 		return true;
 	}
 	return false;

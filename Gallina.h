@@ -5,7 +5,7 @@
 class Gallina : public Personaje{
 	
 	public:
-	int valor = 2;
+	const int valor = 2;
 	Gallina(int X, int Y);
 	Gallina(Punto);
 };
