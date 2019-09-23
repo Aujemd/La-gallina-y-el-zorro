@@ -5,7 +5,10 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
-
+#define ABAJO 80
+#define ARRIBA 72
+#define DERECHA 77
+#define IZQUIERDA 75
 
 
 using namespace std;
@@ -73,9 +76,9 @@ void Juego::ControlGallina(int accion){
 
 	switch(accion){
 		
-		case 80:{
+		case ABAJO:{
 			
-			if(tab.tablero[g->X + 1][g->Y] == 0 || tab.tablero[g->X + 1][g->Y] == 10){
+			if(tab.tablero[g->X + 1][g->Y] == 0 || tab.tablero[g->X + 1][g->Y] == 6){
 				tab.tablero[g->X][g->Y] = 0;
 				g->MoverAbajo();
 				tab.tablero[g->X][g->Y] = g->valor;
@@ -88,9 +91,9 @@ void Juego::ControlGallina(int accion){
 			break;
 		}
 		
-		case 72:{
+		case ARRIBA:{
 			
-			if(tab.tablero[g->X - 1][g->Y] == 0 || tab.tablero[g->X - 1][g->Y] == 10){
+			if(tab.tablero[g->X - 1][g->Y] == 0 || tab.tablero[g->X - 1][g->Y] == 6){
 				tab.tablero[g->X][g->Y] = 0;
 				g->MoverArriba();
 				tab.tablero[g->X][g->Y] = g->valor;
@@ -103,8 +106,8 @@ void Juego::ControlGallina(int accion){
 			break;
 		}
 		
-		case 77:{
-			if(tab.tablero[g->X][g->Y + 1] == 0 || tab.tablero[g->X][g->Y + 1] == 10){
+		case DERECHA:{
+			if(tab.tablero[g->X][g->Y + 1] == 0 || tab.tablero[g->X][g->Y + 1] == 6){
 				tab.tablero[g->X][g->Y] = 0;
 				g->MoverDerecha();
 				tab.tablero[g->X][g->Y] = g->valor;
@@ -116,8 +119,8 @@ void Juego::ControlGallina(int accion){
 			break;
 		}
 		
-		case 75:{
-			if(tab.tablero[g->X][g->Y - 1] == 0 || tab.tablero[g->X][g->Y - 1] == 10){
+		case IZQUIERDA:{
+			if(tab.tablero[g->X][g->Y - 1] == 0 || tab.tablero[g->X][g->Y - 1] == 6){
 				tab.tablero[g->X][g->Y] = 0;
 				g->MoverIzquierda();
 				tab.tablero[g->X][g->Y] = g->valor;
