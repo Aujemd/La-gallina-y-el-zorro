@@ -67,10 +67,10 @@ void Tablero::inicializarTablero(){
 	
 	archivo.open("tablero.txt", ios::in);
 	
-	char linea[5];
+	char linea[6];
 	
 	for(int  i = 0; i < 5; i++){
-		archivo.getline(linea, 6, '\n');
+		archivo.getline(linea, 7, '\n');
 			for(int j = 0; j < 5; j++){
 				if(linea[j] == ' '){
 					this->tablero[i][j] = 0;

@@ -1,7 +1,7 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 #include "NodeTree.h"
-#include "../Collections/eagskunst/DynamicLinealStructure.h"
+#include "DynamicLinealStructure.h"
 
 template <typename T>
 class BinaryTree{
